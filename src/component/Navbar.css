@@ -1,0 +1,225 @@
+/* ======================================================
+   NAVBAR CONTAINER
+====================================================== */
+.navbar {
+  width: 100%;
+  background: linear-gradient(to right, #eff6ff, #dbeafe);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================================
+   LOGO
+====================================================== */
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  cursor: pointer;
+}
+
+/* ======================================================
+   NAV LINKS
+====================================================== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #2563eb;
+}
+
+/* ======================================================
+   RIGHT SIDE BUTTON GROUP
+====================================================== */
+.nav-buttons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+/* LOGIN BUTTON */
+.btn-login {
+  border: 2px solid #2563eb;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  color: #2563eb;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* SIGNUP BUTTON */
+.btn-signup {
+  background: #2563eb;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-signup:hover {
+  background: #1d4ed8;
+}
+
+/* GOOGLE Login */
+.btn-google {
+  background: white;
+  color: #444;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-google:hover {
+  background: #f3f4f6;
+}
+
+/* LOGOUT Button */
+.btn-logout {
+  background: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #dc2626;
+}
+
+/* ======================================================
+   PROFILE ICON & HOVER NAME TOOLTIP
+====================================================== */
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-icon {
+  width: 42px;
+  height: 42px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Tooltip */
+.profile-name {
+  position: absolute;
+  top: 50px;
+  left: -10px;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  white-space: nowrap;
+  color: #111827;
+  font-weight: 600;
+}
+
+.profile-wrapper:hover .profile-name {
+  display: block;
+}
+
+/* ======================================================
+   MOBILE MENU (Responsive)
+====================================================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #1e3a8a;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 1rem;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+}
+
+/* Mobile menu animation */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}

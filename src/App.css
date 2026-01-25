@@ -1,0 +1,14 @@
+/* Reset and fix overflow */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 👈 prevents horizontal white space */
+  background-color: #eff6ff; /* optional: matches your gradient color */
+}

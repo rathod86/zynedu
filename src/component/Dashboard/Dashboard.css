@@ -1,0 +1,151 @@
+/* -------------------------------------- */
+/* MAIN CONTAINER */
+/* -------------------------------------- */
+.dashboard-container {
+  width: 100vw;
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 20px 40px;
+  text-align: center;
+}
+
+/* -------------------------------------- */
+/* DIVIDER */
+/* -------------------------------------- */
+.divider {
+  margin: 30px auto;
+  border: 0;
+  height: 1px;
+  width: 80%;
+  background-color: #ddd;
+}
+
+/* -------------------------------------- */
+/* RECOMMEND BUTTON */
+/* -------------------------------------- */
+.recommend-btn {
+  padding: 12px 26px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.recommend-btn:hover {
+  background-color: #357ac8;
+}
+
+/* -------------------------------------- */
+/* INPUT FORM STYLING */
+/* -------------------------------------- */
+
+/* Input Container */
+.input-box {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Labels */
+.input-box label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input + Dropdown Styling */
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.25s;
+  background: #fafafa;
+}
+
+/* Focus Effect */
+.input-box input:focus,
+.input-box select:focus {
+  border-color: #4a90e2;
+  background: white;
+  box-shadow: 0px 0px 6px rgba(74, 144, 226, 0.3);
+}
+
+/* Dropdown pointer */
+.input-box select {
+  cursor: pointer;
+}
+
+/* Placeholder */
+.input-box input::placeholder {
+  color: #9a9a9a;
+}
+
+/* -------------------------------------- */
+/* RESULT SECTION */
+/* -------------------------------------- */
+.results {
+  margin-top: 30px;
+}
+
+/* Card */
+.card {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  margin: 10px auto;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Card Title */
+.card h4,
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Card Text */
+.card p {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Hint Text */
+.hint {
+  margin-top: 20px;
+  color: gray;
+}
+
+/* -------------------------------------- */
+/* RESPONSIVE */
+/* -------------------------------------- */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 95%;
+  }
+
+  .divider {
+    width: 95%;
+  }
+
+  .input-box {
+    width: 95%;
+  }
+}

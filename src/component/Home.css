@@ -1,0 +1,124 @@
+/* src/component/Home.css */
+
+/* Whole Section */
+.home-section {
+  width: 100vw; 
+  min-height: 100vh;
+  background: linear-gradient(to right, #eff6ff, #dbeafe);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.home-section h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e3a8a; /* deep blue */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.home-section h1 span {
+  color: #4f46e5; /* Indigo */
+}
+
+/* Paragraph */
+.home-section p {
+  color: #374151; /* gray */
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.button-primary {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.button-secondary {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button-secondary:hover {
+  background-color: #eff6ff;
+}
+
+/* Responsive Image */
+.home-section img {
+  margin-top: 3rem;
+  width: 200px;
+  height: auto;
+  animation: bounce-slow 4s infinite;
+}
+
+/* Animation */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (min-width: 768px) {
+  .home-section h1 {
+    font-size: 3.5rem;
+  }
+  .home-section p {
+    font-size: 1.125rem;
+  }
+  .home-section img {
+    width: 250px;
+  }
+}
+
+/* Large screens / laptops */
+@media (min-width: 1024px) {
+  .home-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+  }
+  .home-section h1 {
+    font-size: 4rem;
+  }
+  .home-section p {
+    font-size: 1.25rem;
+  }
+}

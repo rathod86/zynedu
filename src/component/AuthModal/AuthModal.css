@@ -1,0 +1,126 @@
+/* ===================================================================
+   BACKDROP
+=================================================================== */
+.auth-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 12, 20, 0.45);
+  z-index: 200;
+  padding: 1rem;
+  backdrop-filter: blur(3px);
+}
+
+/* ===================================================================
+   MODAL BOX
+=================================================================== */
+.auth-modal {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  position: relative;
+  animation: fadeIn 0.35s ease-out;
+}
+
+/* Close Button */
+.auth-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+}
+
+.auth-close:hover {
+  color: #222;
+}
+
+/* ===================================================================
+   TOP SECTION
+=================================================================== */
+.auth-top {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.auth-logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+  margin-bottom: 0.6rem;
+}
+
+.auth-top h2 {
+  margin: 0;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ===================================================================
+   TABS (Login / Register)
+=================================================================== */
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  background: #eef2ff;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 1rem 0;
+}
+
+.auth-tabs .tab {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.auth-tabs .tab.active {
+  background: white;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+  color: #111827;
+}
+
+/* ===================================================================
+   BODY
+=================================================================== */
+.auth-body {
+  margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}

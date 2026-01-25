@@ -1,0 +1,105 @@
+/* ---------------- REGISTER FORM (ZynEdu Style) ---------------- */
+
+.register-form {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  padding: 28px 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: auto;
+  animation: popup 0.3s ease-out;
+}
+
+/* ---------------- LABELS ---------------- */
+.register-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ---------------- INPUTS ---------------- */
+.register-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.6px solid #cbd5e1;
+  outline: none;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.register-form input:focus {
+  border-color: #4c8bff;
+  box-shadow: 0 0 6px rgba(76, 139, 255, 0.28);
+}
+
+.register-form input:hover {
+  border-color: #94a3b8;
+}
+
+/* ---------------- SUBMIT BUTTON ---------------- */
+.register-btn {
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: 0.25s ease;
+}
+
+/* Gradient Theme Primary */
+.register-btn.primary {
+  background: linear-gradient(90deg, #2563eb, #8b5cf6);
+  color: white;
+}
+
+.register-btn.primary:hover {
+  background: linear-gradient(90deg, #1d4ed8, #7c3aed);
+}
+
+.register-btn:active {
+  transform: scale(0.98);
+}
+
+/* ---------------- BACK HOME LINK ---------------- */
+.back-home {
+  margin-top: 6px;
+  text-align: center;
+  color: #475569;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.back-home:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* ---------------- POPUP ANIMATION ---------------- */
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0px);
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 480px) {
+  .register-form {
+    max-width: 92%;
+    padding: 22px;
+  }
+}
