@@ -1,0 +1,16 @@
+node_modules
+dist
+.git
+.env
+.env.*
+*.log
+.DS_Store
+coverage
+.nyc_output
+*.md
+!README.md
+ai-service
+__pycache__
+*.pyc
+.venv
+venv

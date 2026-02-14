@@ -1,0 +1,54 @@
+# ZynEdu - Docker Compose for deployment
+# Usage: docker compose up -d
+# App: http://localhost:5000  (or set FRONTEND_URL for CORS)
+
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zynedu-app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/zynedu
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5000}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOOGLE_CALLBACK_URL: ${GOOGLE_CALLBACK_URL:-http://localhost:5000/api/auth/google/callback}
+      AI_SERVICE_URL: ${AI_SERVICE_URL:-http://host.docker.internal:8000}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    networks:
+      - zynedu-net
+
+  mongo:
+    image: mongo:7
+    container_name: zynedu-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - zynedu-net
+
+volumes:
+  mongo_data:
+
+networks:
+  zynedu-net:
+    driver: bridge

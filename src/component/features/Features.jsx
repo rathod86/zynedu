@@ -51,18 +51,8 @@ export default function Features() {
 
       </div>
 
-      {/* Old feature cards */}
-      <div className="features-grid">
-        {featuresList.map((item) => (
-          <FeatureCard
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            icon={item.icon}
-            color={item.color}
-          />
-        ))}
-      </div>
+      {/* 🔥 Remove Old Static Cards */}
+      
 
     </section>
   );

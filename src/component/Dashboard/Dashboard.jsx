@@ -8,15 +8,23 @@ function Dashboard() {
   const [goal, setGoal] = useState("");
   const [priority, setPriority] = useState("");
   const [list, setList] = useState([]);
-  const [allCategories, setAllCategories] = useState([]);
-
-  // 👉 Load categories when page loads
+  const [allCategories, setAllCategories] = useState([
+    "cse",
+    "mechanic",
+    "civil",
+    "puc",
+    "sslc",
+    "cbc",
+  ]);
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/categories")
-      .then((res) => setAllCategories(res.data.categories))
-      .catch((err) => console.error("Error loading categories:", err));
-  }, []);
+  let skipApi = false; // set true while offline
+  if (skipApi) return;
+  axios.get("http://127.0.0.1:8000/categories").then((res) => {
+    setAllCategories(res.data.categories);
+  }).catch((err) => {
+    console.error("Error loading categories:", err);
+  });
+}, []);
 
   const getRecommendations = async () => {
     if (!category || !skills || !priority || !goal) {
@@ -25,14 +33,16 @@ function Dashboard() {
     }
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/recommend/skills", {
+      // POST to the Express backend which proxies to the AI service
+      const res = await axios.post("http://localhost:5000/api/ai/recommend", {
         category,
         skills: skills.split(",").map((s) => s.trim()),
-        goal,
+        studyNext: goal,
         priority,
       });
 
-      setList(res.data.data);
+      // backend returns the AI response; data.data contains recommendations
+      setList(res.data.data || res.data);
     } catch (err) {
       console.error("Error fetching AI recommendations:", err);
     }
